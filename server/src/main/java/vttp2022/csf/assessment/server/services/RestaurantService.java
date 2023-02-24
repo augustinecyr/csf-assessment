@@ -63,7 +63,20 @@ public class RestaurantService {
 	// DO NOT CHNAGE THE METHOD'S NAME OR THE RETURN TYPE
 	public Optional<Restaurant> getRestaurant() {
 		// Implmementation in here
-		return null;
+		Optional<Restaurant> opt = restaurantRepo.getRestaurant();
+		if (opt.isEmpty())
+		return Optional.empty();
+
+		Restaurant restaurant = opt.get();
+		restaurant.setName(restaurant.getName());
+		restaurant.setAddress(restaurant.getAddress());
+		restaurant.setCoordinates(restaurant.getCoordinates());
+		restaurant.setCuisine(restaurant.getCuisine());
+		restaurant.setMapURL(restaurant.getMapURL());
+		restaurant.setRestaurantId(restaurant.getRestaurantId());
+
+		return Optional.of(restaurant);
+
 	}
 
 	// TODO Task 5

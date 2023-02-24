@@ -18,7 +18,6 @@ export class RestaurantDetailsComponent implements OnInit {
   // TODO Task 4 and Task 5
   // For View 3
 
-
   constructor(private fbuild: FormBuilder, private svc: RestaurantService, private router: Router) { }
 
   commentForm!: FormGroup;
@@ -30,15 +29,15 @@ export class RestaurantDetailsComponent implements OnInit {
   createForm(): FormGroup<any> {
     let commentForm = this.fbuild.group({
       name: this.fbuild.control<string>('', [Validators.required]),
-      rating:this.fbuild.control<number>(0, [Validators.required]),
-      text:this.fbuild.control<string>('', Validators.required),
+      rating: this.fbuild.control<number>(0, [Validators.required]),
+      text: this.fbuild.control<string>('', Validators.required),
     });
     return commentForm;
   }
 
-  sendForm(){
+  sendForm() {
 
-    let comment:Comment= {
+    let comment: Comment = {
       "name": this.commentForm.get("name")?.value,
       "rating": this.commentForm.get("rating")?.value,
       "text": this.commentForm.get("text")?.value,
@@ -47,7 +46,7 @@ export class RestaurantDetailsComponent implements OnInit {
     console.info("Comments:", comment);
 
     this.svc.postComment(comment);
-    
+
   }
 
   home() {

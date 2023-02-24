@@ -5,10 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { CuisineListComponent } from './components/cuisine-list.component';
+
 import { RestaurantCuisineComponent } from './components/restaurant-cuisine.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details.component';
 import { RestaurantService } from './restaurant-service';
+import { CuisineListComponent } from './components/cuisine-list.component';
 
 
 // routing
