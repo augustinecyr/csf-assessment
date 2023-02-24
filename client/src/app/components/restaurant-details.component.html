@@ -1,0 +1,35 @@
+<p>restaurant-details works!</p>
+<form [formGroup]="commentForm" (ngSubmit)="sendForm()">
+    <h2>Comment</h2>
+    <table>
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td>
+                <input type="text" size="50" id="name" placeholder="Placeholder" formControlName="name">
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="rating">Rating:</label> </td>
+            <td>
+                <input type="range" id="rating" min="1" max="5" value="1" formControlName="rating">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="text">Comments:</label></td>
+            <td>
+                <textarea id="text" cols="40" rows="5" formControlName="text" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="justify-right">
+                    <button type="submit" [disabled]="commentForm.invalid">Submit</button>
+                </div>
+            </td>
+        </tr>
+        <div class="button-container">
+            <button type="button" class="back-button" (click)="home()">Back</button>
+          </div>
+    </table>
+</form>

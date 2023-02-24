@@ -1,0 +1,3 @@
+TODO: Task 1 - Write the mongo import command here
+mongoimport -hlocalhost --port=27017 -restaurantdb -crestaurant --jsonArray json/restaurants.json
+mongoimport --uri mongodb+srv://127.0.0.1:27017: -restaurantdb —collection restaurants --type jsonArray --file restaurants.json
